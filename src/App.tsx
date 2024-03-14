@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
+import { QuestionForm } from './components';
 import { Increase, Decrease } from './redux/modules/counter';
 import { RootState } from './redux/modules/index';
 
@@ -25,6 +26,9 @@ const App = () => {
         <Button className="decrease-btn" onClick={() => dispatch(Decrease())}>
           -
         </Button>
+        <div>
+          <QuestionForm />
+        </div>
       </div>
     </>
   );
