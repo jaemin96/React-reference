@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { Increase, Decrease } from './redux/modules/counter';
 import { RootState } from './redux/modules/index';
@@ -18,12 +19,12 @@ const App = () => {
           <h1>State management</h1>
           <span>current value : {num}</span>
         </div>
-        <button className="increase-btn" onClick={() => dispatch(Increase())}>
+        <Button className="increase-btn" onClick={() => dispatch(Increase())}>
           +
-        </button>
-        <button className="decrease-btn" onClick={() => dispatch(Decrease())}>
+        </Button>
+        <Button className="decrease-btn" onClick={() => dispatch(Decrease())}>
           -
-        </button>
+        </Button>
       </div>
     </>
   );
