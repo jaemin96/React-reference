@@ -12,7 +12,14 @@ interface QuestionFormInput {
 const QuestionForm = (): ReactElement => {
   const { register, handleSubmit } = useForm<QuestionFormInput>();
 
-  const onSubmit: SubmitHandler<QuestionFormInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<QuestionFormInput> = (data) => {
+    console.log(data);
+
+    fetch('http://localhost:8080/question/create', {
+      method: 'post',
+      body: JSON.stringify({ ...data }),
+    });
+  };
 
   return (
     <div className="QFormWrapper">
