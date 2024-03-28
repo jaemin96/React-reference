@@ -15,7 +15,7 @@ jobs:
 
       # node 설치
       - name: Set Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16.15.1' # 현재 개발에 사용되는 노드버전 기재함.
 
