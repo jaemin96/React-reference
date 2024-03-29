@@ -11,6 +11,9 @@ export const Navigation = (): ReactElement => {
         <li>
           <NavLink to="/test">TestPage</NavLink>
         </li>
+        <li>
+          <NavLink to="/firebase">FirebasePage</NavLink>
+        </li>
       </ul>
     </nav>
   );
