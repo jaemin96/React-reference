@@ -1,9 +1,11 @@
 export interface UserClientType {
-  login: (id: string, password: string) => Promise<void>;
+  login: (id: string, password: string) => Promise<string>;
 }
 
 export class UserClient implements UserClientType {
-  login(id: string, password: string) {
-    return fetch('http://example.com').then((res) => res.json());
+  async login(id: string, password: string): Promise<string> {
+    const response = await fetch('http://example.com');
+    const data = await response.json();
+    return data.message;
   }
 }

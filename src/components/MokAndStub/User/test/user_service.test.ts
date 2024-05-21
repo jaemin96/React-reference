@@ -1,22 +1,41 @@
-import { UserClient, UserClientType } from '../user_client';
+import { UserClient } from '../user_client';
 import { UserService } from '../User_service';
+
+jest.mock('../user_client.ts'); // userClient mock
 
 describe('UserService', () => {
   let userService: UserService;
-  let mockUserClient: jest.Mocked<UserClientType>;
+  let mockLogin: jest.Mock;
 
   beforeEach(() => {
-    mockUserClient = {
-      login: jest.fn(),
-    };
+    const MockedUserClient = UserClient as jest.MockedClass<typeof UserClient>;
+    mockLogin = jest.fn();
 
-    userService = new UserService(mockUserClient);
+    MockedUserClient.prototype.login = mockLogin;
+
+    userService = new UserService(new MockedUserClient());
   });
 
-  it('call', async () => {
-    mockUserClient.login.mockResolvedValueOnce();
+  it('should return success', async () => {
+    mockLogin.mockResolvedValue('Success!');
+    const result = await userService.login('jaemin', '1234');
+    expect(result).toBe('Success!');
+  });
 
-    const result = await userService.login('abc', 'abc');
-    expect(result).toBe(true);
+  it('should return fail', async () => {
+    mockLogin.mockImplementation(async (id: string, password: string) => {
+      if (id === 'jaemin' && password === '1234') {
+        return 'Success!';
+      } else {
+        throw new Error('Fail!');
+      }
+    });
+
+    try {
+      const result = await userService.login('abc', '4434');
+      // expect(result).toBe('Success!');
+    } catch (error) {
+      expect(error.message).toBe('Fail!');
+    }
   });
 });
