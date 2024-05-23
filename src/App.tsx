@@ -5,6 +5,7 @@ const App = () => {
     <>
       <Router />
       <div className="App">
+        <div>hello</div>
         <h1>Hello, world!</h1>
       </div>
     </>
