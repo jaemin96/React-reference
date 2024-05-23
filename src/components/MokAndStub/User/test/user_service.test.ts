@@ -1,5 +1,5 @@
 import { UserClient } from '../user_client';
-import { UserService } from '../User_service';
+import { UserService } from '../user_service';
 
 jest.mock('../user_client.ts'); // userClient mock
 
@@ -34,7 +34,7 @@ describe('UserService', () => {
     try {
       const result = await userService.login('abc', '4434');
       // expect(result).toBe('Success!');
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toBe('Fail!');
     }
   });
