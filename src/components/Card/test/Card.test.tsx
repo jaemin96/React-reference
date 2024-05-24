@@ -30,4 +30,23 @@ describe('card', () => {
     expect(screen.getByText(subtitle)).toBeInTheDocument();
     expect(screen.getByText(description)).toBeInTheDocument();
   });
+
+  it('navigates to detail card page with card state when clicked', () => {
+    const { title, subtitle, description, url, alt } = cardInfo;
+    const StateDisplay = () => {
+      return <pre>{JSON.stringify(useLocation().state)}</pre>;
+    };
+
+    render(
+      <MemoryRouter initialEntries={['/test']}>
+        <Routes>
+          <Route
+            path="/test"
+            element={<Card title={title} subtitle={subtitle} description={description} url={url} alt={alt} />}
+          ></Route>
+          <Route path={`/card/detail/${1}`} element={<StateDisplay />}></Route>
+        </Routes>
+      </MemoryRouter>
+    );
+  });
 });
