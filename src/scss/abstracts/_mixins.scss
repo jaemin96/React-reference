@@ -1,0 +1,29 @@
+/* Functions */
+@mixin Font($size: 1rem, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+/* device size - break point */
+@mixin media($breakpoint) {
+  @if $breakpoint == desktop {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media screen and (min-width: $mobile-min) and (max-width: $mobile-max) {
+      @content;
+    }
+  }
+}
+
+@mixin Flex($direction: row, $alignItems: normal, $justifyContent: normal) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}

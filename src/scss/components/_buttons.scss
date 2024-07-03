@@ -1,0 +1,72 @@
+/* ====== Default btn ======= */
+.button {
+  border-radius: 0.875rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  &--primary {
+    color: $--white;
+    background-color: $--info-400;
+    :hover {
+      background-color: $--info-500;
+    }
+  }
+  &--secondary {
+    color: $--info-400;
+    background-color: $--white;
+    border: 1px solid $--info-400 !important;
+    :hover {
+      color: $--info-200;
+      border: 1px solid $--info-200 !important;
+    }
+  }
+
+  &--small {
+    font-size: $--f-s;
+  }
+  &--large {
+    font-size: $--f-lg;
+  }
+}
+
+/* ====== Toggle btn ======= */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.2rem;
+  border-radius: 5rem;
+  font-size: $--f-s;
+  transition: background-color 0.3s;
+
+  &--on {
+    text-align: end;
+    background-color: $--info-400;
+    flex-direction: row-reverse;
+  }
+
+  &--off {
+    text-align: start;
+    background-color: $--wgray-2;
+  }
+
+  &--circle {
+    background-color: $--white;
+    border-radius: 50%;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.12rem;
+  }
+}
+
+/* ====== Check btn ======= */
+.checkbox {
+  margin: 0.4rem;
+  input {
+    margin-right: 0.4em;
+  }
+}

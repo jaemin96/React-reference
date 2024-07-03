@@ -1,0 +1,29 @@
+.tab-container {
+  .tab-menu {
+    display: flex;
+    gap: 0.1rem;
+    border-bottom: 1px solid $--border;
+  }
+
+  .tab-item {
+    font-size: $--f-s;
+    padding: 0.7rem 3rem;
+    background-color: $--inactive-bg-color;
+    color: $--inactive-color;
+    border-top: 1px solid $--white;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    &.active {
+      position: relative;
+      top: 1px;
+      color: $--active-color;
+      background-color: $--active-bg-color;
+      border: 1px solid $--border;
+      border-bottom-width: 0;
+    }
+  }
+
+  .tab-content {
+    margin-top: 1rem;
+  }
+}
