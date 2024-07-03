@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Navigation } from './nav';
+import { Navigation } from '../Nav/nav';
 
 const Layout = (): ReactElement => {
   return (

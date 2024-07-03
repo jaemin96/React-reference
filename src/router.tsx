@@ -1,7 +1,7 @@
 import { ReactElement, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const Layout = lazy(() => import('./components/layout'));
+const Layout = lazy(() => import('./components/Layout/layout'));
 const Home = lazy(() => import('./pages/home'));
 const TestPage = lazy(() => import('./pages/test'));
 const ErrorPage = lazy(() => import('./pages/error-page'));
