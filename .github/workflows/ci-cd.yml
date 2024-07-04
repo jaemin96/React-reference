@@ -11,20 +11,20 @@ jobs:
     name: deploy
     runs-on: ubuntu-latest # workflow 실행환경 - ubuntu (macos & window 대체 가능)
     steps:
-      - uses: actions/checkout@v3 # 깃 소스코드 clone 수행
+      - uses: actions/checkout@v4 # 깃 소스코드 clone 수행
 
       # node 설치
       - name: Set Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.18.1' # 현재 개발에 사용되는 노드버전 기재함.
+          node-version: '20.11.1' # 현재 개발에 사용되는 노드버전 기재함.
 
       # 개발환경 PM이 yarn 이므로 yarn 설치 플로우 추가
       - name: Install yarn
         run: npm install -g yarn@1.22.18
 
       # 의존성 패키지 설치
-      - name: Install dependencies
+      - name: Install dependencies`
         run: yarn install
 
       # 빌드
