@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 import { RootState } from '../redux/modules';
-import { QuestionForm } from '../components';
+import { QuestionForm, Spinner } from '../components';
 import { Increase, Decrease } from '../redux/modules/counter';
 
 const TestPage = (): ReactElement => {
@@ -23,6 +23,9 @@ const TestPage = (): ReactElement => {
       </Button>
       <div>
         <QuestionForm />
+      </div>
+      <div>
+        <Spinner />
       </div>
     </div>
   );
