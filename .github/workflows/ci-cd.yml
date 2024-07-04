@@ -35,4 +35,4 @@ jobs:
       - name: Notify Slack on failure
         if: failure()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"🚨 Build failed in repository '${{ github.repository }}' on job '${{ github.workflow }}' in step '${{ steps.script_step.name }}'"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"🚨 Build failed in repository '${{ github.repository }}' on job '${{ github.workflow }}' "}' ${{ secrets.SLACK_WEBHOOK_URL }}
