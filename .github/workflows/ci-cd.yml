@@ -30,3 +30,9 @@ jobs:
       # 빌드
       - name: Build
         run: yarn build
+
+      # 빌드 실패 (슬랙 노티 발송)
+      - name: Notify Slack on failure
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"🚨 Build failed!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
