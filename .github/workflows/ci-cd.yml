@@ -24,8 +24,10 @@ jobs:
         run: npm install -g yarn@1.22.18
 
       # 의존성 패키지 설치
-      - name: Install dependencies`
-        run: yarn install
+      - name: Install dependencies
+        run: | 
+        yarn install
+        exit 1
 
       # 빌드
       - name: Build
@@ -35,4 +37,6 @@ jobs:
       - name: Notify Slack on failure
         if: failure()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"🚨 Build failed!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{
+            "text":"🚨 Build failed in repository '${{ github.repository }}' on job '${{ github.workflow }}' in step '${{ steps.script_step.name }}'."
+            }' ${{ secrets.SLACK_WEBHOOK_URL }}
