@@ -1,4 +1,3 @@
-
 /* Basic components */
 import { Button, Toggle } from './Button';
 import { Input } from './Input';
@@ -9,6 +8,7 @@ import { Group } from './Group';
 import { CheckBox, CheckGroup } from './Checkbox';
 import { QuestionForm } from './Form';
 import { Timer } from './Timer';
+import { Spinner } from './Spinner';
 
 /* Layout components */
 import { Layout } from './Layout';
@@ -31,6 +31,7 @@ export {
   DropdownItem,
   Group,
   Timer,
+  Spinner,
   Layout,
   Header,
   Footer,
