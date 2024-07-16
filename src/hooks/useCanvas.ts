@@ -1,12 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-interface CanvasProps {
-    backgroundColor: string;
-    width: number;
-    height: number;
-}
-
-export const useCanvas = ({backgroundColor, width, height}: CanvasProps) => {
+export const useCanvas = (width: number, height: number, backgroundColor:string = "transparent") => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
