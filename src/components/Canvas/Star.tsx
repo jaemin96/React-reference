@@ -14,7 +14,7 @@ export const Star = () => {
         const canvas = starRef.current;
         const ctx = canvas?.getContext("2d");
         if (!ctx) return;
-        
+
         let rotate = Math.PI / 2 * 3; // 초기 각도는 270도로 설정하여 별의 최상단이 (0, outerRadius) 가 되도록
         let cx = 150; // 중심점 x좌표
         let cy = 150; // 중심점 y좌표
@@ -40,7 +40,7 @@ export const Star = () => {
         ctx.lineWidth = 2;
         ctx.stroke();
         ctx.closePath(); 
-    }, [starRef]);
+    }, [starRef, innerRadius, outerRadius, stepRotate]);
 
     return (
         <>
