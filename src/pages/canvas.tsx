@@ -1,4 +1,4 @@
-import { SinGraph, Straight } from '../components/Canvas';
+import { CosGraph, SinGraph, Straight } from '../components/Canvas';
 
 const CanvasPage = () => {
     return (
@@ -7,6 +7,7 @@ const CanvasPage = () => {
             <div style={{display: "flex", gap: "1rem"}}>
                 <Straight />
                 <SinGraph />
+                <CosGraph />
             </div>
         </>
     )
