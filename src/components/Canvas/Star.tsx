@@ -40,7 +40,7 @@ export const Star = () => {
         ctx.lineWidth = 2;
         ctx.stroke();
         ctx.closePath(); 
-    }, [starRef]);
+    }, [starRef, x, y, rotate]);
 
     return (
         <>
