@@ -1,3 +1,4 @@
+import { useCanvas } from './useCanvas';
 import useMovie from './useMovie';
 
-export { useMovie };
+export { useMovie, useCanvas };
