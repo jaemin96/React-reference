@@ -31,7 +31,7 @@ export const Triangle = () => {
         ctx.lineWidth = 2;
         ctx.stroke();
         ctx.closePath();
-    }, [tgRef]);
+    }, [tgRef, step]);
 
     return <canvas ref={tgRef} />
 };
